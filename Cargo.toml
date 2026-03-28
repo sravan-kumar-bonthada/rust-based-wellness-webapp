@@ -1,0 +1,30 @@
+[package]
+name = "ai-backend"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1.41", features = ["rt-multi-thread", "macros", "signal"] }
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "macros", "migrate", "uuid", "chrono"] }
+dotenvy = "0.15"
+anyhow = "1.0"
+axum = { version = "0.7", features = ["multipart"] }
+tower = "0.4"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+tower-http = { version = "0.5", features = ["trace", "cors", "fs"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+deadpool-redis = "0.11"
+argon2 = "0.4"
+jsonwebtoken = "8"
+rand = "0.8"
+
+time = { version = "0.3", features = ["macros"] }
+
+chrono = { version = "0.4", features = ["serde"] }
+
+uuid = { version = "1", features = ["serde", "v4"] }
+hyper = { version = "0.14", features = ["server"] }
+reqwest = { version = "0.13.2", features = ["json", "multipart"] }
+oauth2 = "4.4"
